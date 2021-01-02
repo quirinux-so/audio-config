@@ -1,0 +1,79 @@
+#!/bin/bash
+
+# Nombre:	audio-config
+# Autor:	Charlie Martínez® <cmartinez@quirinux.org>
+# Licencia:	https://www.gnu.org/licenses/gpl-3.0.txt
+# Descripción:	Utilidad para habilitar o deshabilitar el audio integrado de Intel en GNU/Linux.
+# Versión:	1.00
+
+# Generando el menú gráfico con Zenity:
+
+opc=$(zenity --width=500 --height=220 --title=audio-config --entry --text="  
+              
+             
+              Introduce una opción: 
+
+	      1) Deshabilitar audio Intel.
+	      2) Habilitar audio Intel. 
+              3) Salir
+"
+)
+
+case $opc in
+
+# DESHABILITAR AUDIO INTEL
+
+"1") 
+
+(
+
+echo "# Deshabilitando audio Intel"; sleep 1s
+
+sudo touch /etc/modprobe.d/sonido.blacklist.conf 
+sudo echo "blacklist snd_hda_intel" > /etc/modprobe.d/sonido-blacklist.conf 
+
+echo "# Audio Intel deshabilitado. Tendrás que reiniciar para aplicar los cambios."; sleep 3s
+)|
+
+zenity --progress --pulsate 
+
+title="Quirinux"
+percentage=0
+
+
+;;
+
+# HABILITAR AUDIO INTEL
+
+"2") 
+
+(
+
+echo "# Habilitando audio Intel"; sleep 1s
+
+FILE="/etc/modprobe.d/sonido.blacklist.conf"
+
+if [ -f "$FILE" ]; then
+
+rm /etc/modprobe.d/sonido.blacklist.conf 
+
+fi
+
+echo "# Audio Intel habilitado. Tendrás que reiniciar para aplicar los cambios."; sleep 1s
+
+)|
+
+zenity --progress --pulsate 
+
+title="Quirinux"
+percentage=0
+
+;;
+
+
+"3") 
+
+	exit 0
+;; 
+
+esac

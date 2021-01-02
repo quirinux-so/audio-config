@@ -1,0 +1,18 @@
+Package: audio-config
+Version: 1.0
+Installed-Size: 87528
+Maintainer: Charlie Martinez <cmartinez@quirinux.org>
+Section: graphics
+Source: https://github.com/quirinux-so
+Homepage: https://www.quirinux.org
+Architecture: amd64
+Priority: optional
+Depends: zenity
+Description: Utilidad para deshabilitar o habilitar el audio integrado de Intel en GNU/Linux
+ Autor: Charlie Martinez.
+ .
+ Si quieres utilizar una placa de audio especializada, puedes utilizar este programa para deshabilitar el audio integrado Intel HD de tu portátil o equipo de sobremesa.
+ .
+ Compatible con Quirnux, Ubuntu, Debian, AV Linux, Mint, Devuan, MX, Etertics y otras derivadas.
+ .
+ IMPORTANTE: Algunos gestores de software como gnome-software detectan este paquete como "propietario" aunque en realidad no lo es. Licencia: GPLv3.

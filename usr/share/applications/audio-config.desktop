@@ -1,0 +1,20 @@
+[Desktop Entry]
+Type=Application
+Name=Audio-Config
+
+Comment=Enable or disable Intel Integrated Audio.
+Comment[es]=Habilitar o deshabilitar el audio Intel integrado.
+Comment[gl]=Activar ou desactivar o son integrado Intel.
+Comment[fr]=Modifier l'apparence et les raccourcis clavier
+Comment[it]=Abilita o disabilita Intel Integrated Audio.
+Comment[de]=Aktivieren oder deaktivieren Sie Intel Integrated Audio.
+Comment[ru]=Включение или отключение встроенного звука Intel.
+Comment[pt]=Ative ou desative o Intel Integrated Audio.
+Icon=debian
+Exec=sudo audio-config
+Keywords=AUDIO
+Categories=Multimedia;Audio;Other;GNOME;KDE;GTK;
+Terminal=true
+NoDisplay=false
+StartupNotify=true
+Encoding=UTF-8
